@@ -1,70 +1,70 @@
 #include <iostream>
 using namespace std;
 struct Node {
-   int data;
-   struct Node *next;
+Â  Â int data;
+Â  Â struct Node *next;
 };
 struct Node* top = NULL;
 void push(int val) {
-   struct Node* newnode = (struct Node*) malloc(sizeof(struct Node));
-   newnode->data = val;
-   newnode->next = top;
-   top = newnode;
+Â  Â struct Node* newnode = (struct Node*) malloc(sizeof(struct Node));
+Â  Â newnode->data = val;
+Â  Â newnode->next = top;
+Â  Â top = newnode;
 }
 void pop() {
-   if(top==NULL)
-   cout<<"Stack Underflow"<<endl;
-   else {
-      cout<<"The popped element is "<< top->data <<endl;
-      top = top->next;
-   }
+Â  Â if(top==NULL)
+Â  Â cout<<"Stack Underflow"<<endl;
+Â  Â else {
+Â  Â  Â  cout<<"The element is "<< top->data <<endl;
+Â  Â  Â  top = top->next;
+Â  Â }
 }
 void display() {
-   struct Node* ptr;
-   if(top==NULL)
-   cout<<"stack is empty";
-   else {
-      ptr = top;
-      cout<<"Stack elements are: ";
-      while (ptr != NULL) {
-         cout<< ptr->data <<" ";
-         ptr = ptr->next;
-      }
-   }
-   cout<<endl;
+Â  Â struct Node* ptr;
+Â  Â if(top==NULL)
+Â  Â cout<<"stack is empty";
+Â  Â else {
+Â  Â  Â  ptr = top;
+Â  Â  Â  cout<<"Stack elements are: ";
+Â  Â  Â  while (ptr != NULL) {
+Â  Â  Â  Â  Â cout<< ptr->data <<" ";
+Â  Â  Â  Â  Â ptr = ptr->next;
+Â  Â  Â  }
+Â  Â }
+Â  Â cout<<endl;
 }
 int main() {
-   int ch, val;
-   cout<<"1) Push in stack"<<endl;
-   cout<<"2) Pop from stack"<<endl;
-   cout<<"3) Display stack"<<endl;
-   cout<<"4) Exit"<<endl;
-   do {
-      cout<<"Enter choice: "<<endl;
-      cin>>ch;
-      switch(ch) {
-         case 1: {
-            cout<<"Enter value to be pushed:"<<endl;
-            cin>>val;
-            push(val);
-            break;
-         }
-         case 2: {
-            pop();
-            break;
-         }
-         case 3: {
-            display();
-            break;
-         }
-         case 4: {
-            cout<<"Exit"<<endl;
-            break;
-         }
-         default: {
-            cout<<"Invalid Choice"<<endl;
-         }
-      }
-   }while(ch!=4);
-   return 0;
+Â  Â int ch, val;
+Â  Â cout<<"1) Push "<<endl;
+Â  Â cout<<"2) Pop "<<endl;
+Â  Â cout<<"3) Display "<<endl;
+Â  Â cout<<"4) Exit"<<endl;
+Â  Â do {
+Â  Â  Â  cout<<"Enter choice: "<<endl;
+Â  Â  Â  cin>>ch;
+Â  Â  Â  switch(ch) {
+Â  Â  Â  Â  Â case 1: {
+Â  Â  Â  Â  Â  Â  cout<<"Enter value:"<<endl;
+Â  Â  Â  Â  Â  Â  cin>>val;
+Â  Â  Â  Â  Â  Â  push(val);
+Â  Â  Â  Â  Â  Â  break;
+Â  Â  Â  Â  Â }
+Â  Â  Â  Â  Â case 2: {
+Â  Â  Â  Â  Â  Â  pop();
+Â  Â  Â  Â  Â  Â  break;
+Â  Â  Â  Â  Â }
+Â  Â  Â  Â  Â case 3: {
+Â  Â  Â  Â  Â  Â  display();
+Â  Â  Â  Â  Â  Â  break;
+Â  Â  Â  Â  Â }
+Â  Â  Â  Â  Â case 4: {
+Â  Â  Â  Â  Â  Â  cout<<"Exit"<<endl;
+Â  Â  Â  Â  Â  Â  break;
+Â  Â  Â  Â  Â }
+Â  Â  Â  Â  Â default: {
+Â  Â  Â  Â  Â  Â  cout<<"Invalid "<<endl;
+Â  Â  Â  Â  Â }
+Â  Â  Â  }
+Â  Â }while(ch!=4);
+Â  Â return 0;
 }
